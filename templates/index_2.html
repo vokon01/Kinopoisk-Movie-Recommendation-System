@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block movies %}
+<h3>Подобрали специально для Вас</h3>
+{% for movie in cfs_data[0:8]%}
+
+ <div class="col-sm mb-3">
+
+  <div class="card" style="width: 18rem;">
+    <img src="{{movie[2]}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{movie[0]}}</h5>
+      <p class="card-text">{{movie[1]}}</p>
+      <a href="{{movie[3]}}" class="btn btn-primary">Трейлер</a>
+    </div>
+  </div>
+ </div>
+{% endfor %}
+
+<h3>Похоже на то, что Вы смотрите</h3>
+{% for movie in cbs_data[0:8]%}
+
+ <div class="col-sm mb-3">
+
+  <div class="card" style="width: 18rem;">
+    <img src="{{movie[2]}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{movie[0]}}</h5>
+      <p class="card-text">{{movie[1]}}</p>
+      <a href="{{movie[3]}}" class="btn btn-primary">Трейлер</a>
+    </div>
+  </div>
+ </div>
+{% endfor %}
+
+
+
+
+{% endblock %}

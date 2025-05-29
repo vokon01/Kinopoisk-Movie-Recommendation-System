@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% block recommendation %}
+
+<form class="col-lg" action="{{url_for('recom_by_userid')}}" method="post">
+
+
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+        <label >Введите номер пользователя</label>
+        <input type="text" name="userid" class="form-control" value="1633718">
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Получить рекомендации</button>
+
+</form>
+
+
+{% endblock %}
+
+{% block movies %}
+<h3>Самые популярные</h3>
+{% for movie in pop_data[0:8]%}
+
+ <div class="col-sm mb-3">
+
+  <div class="card" style="width: 18rem;">
+    <img src="{{movie[2]}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{movie[0]}}</h5>
+      <p class="card-text">{{movie[1]}}</p>
+      <a href="{{movie[3]}}" class="btn btn-primary">Трейлер</a>
+    </div>
+  </div>
+ </div>
+{% endfor %}
+
+{% endblock %}
