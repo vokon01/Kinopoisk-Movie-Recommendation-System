@@ -12,7 +12,7 @@ Content-Based Filtering: Recommends movies based on metadata (genres, directors,
 
 Hybrid Model: Combines collaborative and content-based approaches for improved accuracy.
 
-Evaluation Metrics: RMSE, MAE, Precision@K, and Recall@K for performance analysis.
+Evaluation Metrics: RMSE, MAE, Precision@10, and Recall@10 for performance analysis.
 
 
 
